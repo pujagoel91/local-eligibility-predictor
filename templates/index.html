@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset= "UTF-8">
+    <title>Eligibility Finder</title>
+    <link href='https://fonts.googleapis.css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+   
+</head>
+
+<body background-image= "sunset.jpg">
+    <div class="login">
+        <h1>Eligibility for Benefits</h1>
+        <h2>Enter basic information</h2>
+        <form action="{{ url_for('predict')}}" method="post">
+            <label for="income">Enter annual income: </label>
+            <input type="text" name="Annual_Income" placeholder="" required="required" />
+            <br><br>
+            <label for="members">Enter number of household members: </label>
+            <input type="text" name="Household_members" placeholder="" required="required" />
+            <br><br>
+            <label for="age">Enter your age: (in years) </label>
+            <input type="text" name="age" placeholder="" required="required" />
+            <br><br>
+            <label for="gender">Enter gender: (1-Male, 0-Female) </label>
+            <input type="text" name="male_flag" placeholder="" required="required" />
+            <br><br>
+            <label for="pregnant">Are you pregnant: (1-Yes, 0-No) </label>
+            <input type="text" name="pregnant_flag" placeholder="" required="required" />
+            <br><br>
+            <label for="citizenship">Enter your citizenship: (1-US, 0-Other) </label>
+            <input type="text" name="us_flag" placeholder="" required="required" />
+            <br><br>
+            <label for="homeless">Are you homeless: (1-Yes, 0-No) </label>
+            <input type="text" name="homeless_flag" placeholder="" required="required" />
+            <br><br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict Eligibility</button>
+        </form>
+    <br><br>
+    {{prediction_text}}
+    
+    </div>            
+</body>
+</html>
